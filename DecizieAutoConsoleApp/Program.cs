@@ -116,16 +116,16 @@ namespace DecizieAuto
             }
 
 
-            Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", pondereImpPret, pondereImpCosturi, pondereImpCP, pondereImpConfort));
+            Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", Math.Round(pondereImpPret,3), Math.Round(pondereImpCosturi,3), Math.Round(pondereImpCP,3), Math.Round(pondereImpConfort,3)));
 
-            Console.WriteLine("Date fiind ponderile anterioare, obtinem:");
+            Console.WriteLine("\nDate fiind ponderile anterioare, obtinem:");
 
             Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|{4,10}|", m0.importanta, m1.importanta, m2.importanta, m3.importanta, m4.importanta));
 
             Console.WriteLine("Ierarhia masinilor este:");
 
             var sPonderiMListSorted = listaMasini.OrderByDescending(x => x.importanta).ToList();
-
+            Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|{4,10}|", "1", "2", "3", "4", "5"));
             Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|{4,10}|", sPonderiMListSorted[0].nume, sPonderiMListSorted[1].nume, sPonderiMListSorted[2].nume, sPonderiMListSorted[3].nume, sPonderiMListSorted[4].nume));
 
           
