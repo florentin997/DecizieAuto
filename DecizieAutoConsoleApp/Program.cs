@@ -12,71 +12,103 @@ namespace DecizieAuto
         {
             
             List<int> m0Intretinere = new List<int> { 400 , 430, 500 };
-            Masina m0 = new Masina("M1",13.5, m0Intretinere, 140, 20);
+            List<int> m0Confort = new List<int> { 15, 18, 20 };
+            Masina m0 = new Masina("M1",13.5, m0Intretinere, 140, m0Confort);
 
             List<int> m1Intretinere = new List<int> { 440, 500, 530 };
-            Masina m1 = new Masina("M2",12, m1Intretinere, 120, 19);
+            List<int> m1Confort = new List<int> { 16, 17, 18 };
+            Masina m1 = new Masina("M2",12, m1Intretinere, 120, m1Confort);
 
             List<int> m2Intretinere = new List<int> { 380, 400, 480 };
-            Masina m2 = new Masina("M3", 11, m2Intretinere, 150, 17);
+            List<int> m2Confort = new List<int> { 16, 19, 20 };
+            Masina m2 = new Masina("M3", 11, m2Intretinere, 150, m2Confort);
 
             List<int> m3Intretinere = new List<int> { 410, 450, 520 };
-            Masina m3 = new Masina("M4", 10.5, m3Intretinere, 125, 16);
+            List<int> m3Confort = new List<int> { 17, 18, 19 };
+            Masina m3 = new Masina("M4", 10.5, m3Intretinere, 125, m3Confort);
 
             List<int> m4Intretinere = new List<int> { 490, 530, 550 };
-            Masina m4 = new Masina("M5", 13.6, m4Intretinere, 180, 18);
+            List<int> m4Confort = new List<int> { 16, 18, 20 };
+            Masina m4 = new Masina("M5", 13.6, m4Intretinere, 180, m4Confort);
 
             List<Masina> listaMasini = new List<Masina>() { m0, m1, m2, m3, m4 };
-            Console.WriteLine($"Masina 1: pret={m0.pret},intretinere=({m0.cheltuieli[0]},{m0.cheltuieli[1]},{m0.cheltuieli[2]}), cai putere={m0.cai_putere}, confort={m0.confort}");
-            Console.WriteLine($"Masina 2: pret={m1.pret},intretinere=({m1.cheltuieli[0]},{m1.cheltuieli[1]},{m1.cheltuieli[2]}), cai putere={m1.cai_putere}, confort={m1.confort}");
-            Console.WriteLine($"Masina 3: pret={m2.pret},intretinere=({m2.cheltuieli[0]},{m2.cheltuieli[1]},{m2.cheltuieli[2]}), cai putere={m2.cai_putere}, confort={m2.confort}");
-            Console.WriteLine($"Masina 4: pret={m3.pret},intretinere=({m3.cheltuieli[0]},{m3.cheltuieli[1]},{m3.cheltuieli[2]}), cai putere={m3.cai_putere}, confort={m3.confort}");
-            Console.WriteLine($"Masina 5: pret={m4.pret},intretinere=({m4.cheltuieli[0]},{m4.cheltuieli[1]},{m4.cheltuieli[2]}), cai putere={m4.cai_putere}, confort={m4.confort}");
+            Console.WriteLine($"Masina 1: pret={m0.pret},intretinere=({m0.cheltuieli[0]},{m0.cheltuieli[1]},{m0.cheltuieli[2]}), cai putere={m0.cai_putere}, confort=({m0.confort[0]},{m0.confort[1]},{m0.confort[2]})");
+            Console.WriteLine($"Masina 2: pret={m1.pret},intretinere=({m1.cheltuieli[0]},{m1.cheltuieli[1]},{m1.cheltuieli[2]}), cai putere={m1.cai_putere}, confort=({m1.confort[0]},{m1.confort[1]},{m1.confort[2]})");
+            Console.WriteLine($"Masina 3: pret={m2.pret},intretinere=({m2.cheltuieli[0]},{m2.cheltuieli[1]},{m2.cheltuieli[2]}), cai putere={m2.cai_putere}, confort=({m2.confort[0]},{m2.confort[1]},{m2.confort[2]})");
+            Console.WriteLine($"Masina 4: pret={m3.pret},intretinere=({m3.cheltuieli[0]},{m3.cheltuieli[1]},{m3.cheltuieli[2]}), cai putere={m3.cai_putere}, confort=({m3.confort[0]},{m3.confort[1]},{m3.confort[2]})");
+            Console.WriteLine($"Masina 5: pret={m4.pret},intretinere=({m4.cheltuieli[0]},{m4.cheltuieli[1]},{m4.cheltuieli[2]}), cai putere={m4.cai_putere}, confort=({m4.confort[0]},{m4.confort[1]},{m4.confort[2]})");
 
             Console.WriteLine("Pretul dorit al masinii (mii u.m.):");
             double pretDorit = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Abatere posibila:");
-            double abaterePosibilaPret = (int)Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Abatere posibila (nr real):");
+            double abaterePosibilaPret = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Cheltuieli de intretinere dorite:");
-            double costIntretinereDorit = (int)Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Abatere maxima de la costul de intretinere:");
-            double abatereCostIntretinere = (int)Convert.ToInt32(Console.ReadLine());
+            double costIntretinereDorit = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Abatere maxima de la costul de intretinere (nr real):");
+            double abatereCostIntretinere = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Numarul dorit de cai putere:");
-            double caiPutereAspiratie = (int)Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Abatere admisa la cai putere:");
-            double abatereAdmisaCP = (int)Convert.ToInt32(Console.ReadLine());
+            double caiPutereAspiratie = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Abatere admisa la cai putere (nr intreg):");
+            double abatereAdmisaCP = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Gradul de confort maxim este 20.");
             double confortMax = 20;
-            Console.WriteLine("Abatere posibila de la gradul de confort:");
-            double abatereConfort = (int)Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Abatere posibila de la gradul de confort (nr intreg):");
+            double abatereConfort = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Nivel de aspiratie:");
             Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", pretDorit, costIntretinereDorit, confortMax, caiPutereAspiratie));
             Console.WriteLine("Abatere admisa:");
-            Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", abaterePosibilaPret, abatereCostIntretinere, abatereConfort, abatereAdmisaCP));
+            Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", Math.Round(abaterePosibilaPret,3), abatereCostIntretinere, abatereConfort, abatereAdmisaCP));
 
-            List<double> listaNrTriunghiulare = new List<double>();
+            List<double> listaNrTriunghiulareCosturi = new List<double>();
+            List<double> listaNrTriunghiulareConfort = new List<double>();
             foreach (var masina in listaMasini)
             {
                 double adunareExtreme = masina.cheltuieli[0] + masina.cheltuieli[2];
                 double inmultireMedie = 2 * masina.cheltuieli[1];
                 double suma = inmultireMedie + adunareExtreme;
-                double nrTriunghiularValue = (0.25 * suma);
+                double nrTriunghiularValueCost = (0.25 * suma);
 
-                masina.nrTriunghiular = nrTriunghiularValue;
+                masina.nrTriunghiularCost = nrTriunghiularValueCost;
             }
+            foreach (var masina in listaMasini)
+            {
+                double adunareExtreme = masina.confort[0] + masina.confort[2];
+                double inmultireMedie = 2 * masina.confort[1];
+                double suma = inmultireMedie + adunareExtreme;
+                double nrTriunghiularValueConf = (0.25 * suma);
+
+                masina.nrTriunghiularConfort = nrTriunghiularValueConf;
+            }
+            Console.WriteLine("\nMatricea consecintelor:");
+            foreach (var m in listaMasini)
+            {
+                Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", m.pret,m.nrTriunghiularCost,m.cai_putere,m.nrTriunghiularConfort));
+
+            }
+            // List<Object> NrTriunghiulare(List<Masina> list)
+            //{
+            //    double adunareExtreme = masina.cheltuieli[0] + masina.cheltuieli[2];
+            //    double inmultireMedie = 2 * masina.cheltuieli[1];
+            //    double suma = inmultireMedie + adunareExtreme;
+            //    double nrTriunghiularValue = (0.25 * suma);
+
+            //    masina.nrTriunghiular = nrTriunghiularValue;
+
+            //    return nrTriunghiularValue;
+            //}
 
             List<GradApartenenta> gradApartenentaMasina = new List<GradApartenenta>();
 
             foreach (var m in listaMasini)
             {
                 double gradApartPret = CriteriuMin(m.pret, pretDorit, abaterePosibilaPret);
-                double gradApartCosturi = CriteriuMin(m.nrTriunghiular, costIntretinereDorit, abatereCostIntretinere);
+                double gradApartCosturi = CriteriuMin(m.nrTriunghiularCost, costIntretinereDorit, abatereCostIntretinere);
                 double gradApartCaiPutere = CriteriuMin(m.cai_putere, caiPutereAspiratie, abatereAdmisaCP);
-                double gradApartConfort = CriteriuMax(m.confort, confortMax, abatereConfort);
+                double gradApartConfort = CriteriuMax(m.nrTriunghiularConfort, confortMax, abatereConfort);
 
                 m.gradApartPret = gradApartPret;
                 m.gradApartCosturi = gradApartCosturi;
@@ -102,7 +134,7 @@ namespace DecizieAuto
             Console.WriteLine("\nMultimile fuzzy:");
             foreach(var m in listaMasini)
             {
-                Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", Math.Round(m.gradApartPret, 3), Math.Round(m.gradApartCosturi, 3), Math.Round(m.gradApartCaiPutere, 3), Math.Round(m.gradApartConfort, 3)));
+               
                 List<double> gradApartM = new List<double> { m.gradApartPret,m.gradApartCosturi,m.gradApartCaiPutere, m.gradApartConfort };
                 
                 double sumaPonderiM;
@@ -113,10 +145,12 @@ namespace DecizieAuto
                 double minValueByRow;
                 minValueByRow = gradApartM.Min();
                 minValByRowList.Add(minValueByRow);
+                Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", Math.Round(m.gradApartPret, 3), Math.Round(m.gradApartCosturi, 3), Math.Round(m.gradApartCaiPutere, 3), Math.Round(m.gradApartConfort, 3)));
             }
 
 
-            Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", Math.Round(pondereImpPret,3), Math.Round(pondereImpCosturi,3), Math.Round(pondereImpCP,3), Math.Round(pondereImpConfort,3)));
+
+            //Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|", Math.Round(pondereImpPret,3), Math.Round(pondereImpCosturi,3), Math.Round(pondereImpCP,3), Math.Round(pondereImpConfort,3)));
 
             Console.WriteLine("\nDate fiind ponderile anterioare, obtinem:");
 
@@ -126,14 +160,11 @@ namespace DecizieAuto
 
             var sPonderiMListSorted = listaMasini.OrderByDescending(x => x.importanta).ToList();
             Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|{4,10}|", "1", "2", "3", "4", "5"));
+            Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine(String.Format("|{0,10}|{1,10}|{2,10}|{3,10}|{4,10}|", sPonderiMListSorted[0].nume, sPonderiMListSorted[1].nume, sPonderiMListSorted[2].nume, sPonderiMListSorted[3].nume, sPonderiMListSorted[4].nume));
 
-          
-            
 
-            
-            
-
+            Console.WriteLine("Apasa enter pentru a opri aplicatia.");
             Console.ReadLine();
 
             
